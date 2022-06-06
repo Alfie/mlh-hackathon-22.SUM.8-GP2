@@ -1,0 +1,145 @@
+{
+  "version": "0.1.0",
+  "name": "testproj",
+  "instructions": [
+    {
+      "name": "start",
+      "accounts": [
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "playerDetails",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "changePlayerName",
+      "accounts": [
+        {
+          "name": "user",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "userStats",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "changeGameScore",
+      "accounts": [
+        {
+          "name": "user",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "userStats",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "game",
+          "type": "string"
+        },
+        {
+          "name": "score",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "changeCountGamesPlayed",
+      "accounts": [
+        {
+          "name": "user",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "userStats",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "game",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "PlayerDetails",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "gameScore",
+            "type": {
+              "vec": "string"
+            }
+          },
+          {
+            "name": "countGamesPlayed",
+            "type": {
+              "array": [
+                "u64",
+                2
+              ]
+            }
+          },
+          {
+            "name": "gamesPlayed",
+            "type": {
+              "vec": "string"
+            }
+          },
+          {
+            "name": "playerLevel",
+            "type": "u64"
+          },
+          {
+            "name": "playerName",
+            "type": "string"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "address": "H1DqRsCGAyXnVEAWQsd2bRYhcZxD91SHCFeQoAZRoTqF"
+  }
+}
